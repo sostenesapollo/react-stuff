@@ -21,7 +21,7 @@ function Upper() {
 
   return (
     <>
-      <h1>My app</h1>
+      <h1>My app test</h1>
       <p>
         <UpperCase text="Texto que ficará em caixa alta"/>    
       </p>
