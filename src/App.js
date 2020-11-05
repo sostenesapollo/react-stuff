@@ -1,21 +1,30 @@
 import React, { useContext, useState } from 'react'
 import Contador from './components/Contador'
 import Upper from './components/Upper'
-import CountProvider from './context/Count'
 import ContadorMaximo from './components/ContadorMaximo'
 import LoopTest from './components/LoopTest'
+import Container from './components/Container'
+import ChangeTheme from './components/ChangeTheme'
+import CountProvider from './context/Count'
+import ThemeProvider from './context/ThemeProvider'
 
 function App() {    
-  return (
-    <CountProvider>      
-      <Upper/>
-      <hr/>
-      <Contador/>      
-      <hr/>      
-      <ContadorMaximo/>
-      <hr/>
-      <LoopTest/>
-    </CountProvider>
+return (
+    <ThemeProvider>
+      <CountProvider>
+        <Container>
+          <Upper/>
+          <hr/>
+          <Contador/>      
+          <hr/>      
+          <ContadorMaximo/>
+          <hr/>
+          <LoopTest/>
+          <hr/>
+          <ChangeTheme/>
+        </Container>
+      </CountProvider>
+    </ThemeProvider>
   )
 }
 
