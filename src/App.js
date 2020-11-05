@@ -1,52 +1,22 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import Contador from './components/Contador'
+import Upper from './components/Upper'
+import CountProvider from './context/Count'
+import ContadorMaximo from './components/ContadorMaximo'
+import LoopTest from './components/LoopTest'
 
-function App() {  
+function App() {    
   return (
-    <>      
+    <CountProvider>      
       <Upper/>
-      <Contador start={20}/>
-    </>
+      <hr/>
+      <Contador/>      
+      <hr/>      
+      <ContadorMaximo/>
+      <hr/>
+      <LoopTest/>
+    </CountProvider>
   )
-}
-
-function Upper() {
-
-  function UpperCase(props) {
-    return props.text.toUpperCase()
-  }
-
-  function UpperCaseContent(props) {
-    return props.children.toUpperCase()
-  }
-
-  return (
-    <>
-      <h1>My app</h1>
-      <p>
-        <UpperCase text="Texto que ficará em caixa alta"/>    
-      </p>
-      <p>
-        <UpperCaseContent>Conteúdo que está dentro da div</UpperCaseContent>
-      </p>
-    </>
-  )
-
-}
-
-function Contador(props) {
-
-  const [contador, setContador] = useState(props.start ? props.start : 0)
-
-  function IncrementaContador() {
-    setContador(contador+1)
-  }
-
-  return (
-    <>
-      <p>{contador}</p>
-      <button onClick={IncrementaContador}>Incrementar</button>
-    </>
-  )  
 }
 
 export default App;
